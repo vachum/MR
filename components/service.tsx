@@ -51,7 +51,13 @@ const Service = ({ serviceId, title, text, price, tag }: serviceProps) => {
   const [tagState, setTagState] = useState("");
   return (
     <Card>
-      <Badge className="w-[5em] flex justify-center items-center m-4">
+      <Badge
+        className={
+          tag == "Nový"
+            ? "w-[5em] flex justify-center items-center bg-blue-600 m-4"
+            : "w-[5em] bg-red-500 flex justify-center items-center m-4"
+        }
+      >
         {tag}
       </Badge>
       <CardHeader>
@@ -64,7 +70,7 @@ const Service = ({ serviceId, title, text, price, tag }: serviceProps) => {
       <CardFooter>
         <Dialog>
           <DialogTrigger>
-            <Button className="mr-2 bg-gray-800">
+            <Button className="mr-2 bg-gray-800" size="icon">
               <MdCreate size={22} />
             </Button>
           </DialogTrigger>
@@ -137,6 +143,7 @@ const Service = ({ serviceId, title, text, price, tag }: serviceProps) => {
 
         <Button
           variant={"destructive"}
+          size="icon"
           onClick={async (e) => {
             e.preventDefault();
             await deleteService({ id: serviceId });

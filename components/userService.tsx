@@ -17,7 +17,13 @@ interface serviceProps {
 const UserService = ({ title, text, price, tag }: serviceProps) => {
   return (
     <Card>
-      <Badge className="w-[5em] flex justify-center items-center m-4">
+      <Badge
+        className={
+          tag == "Nový"
+            ? "w-[5em] flex justify-center items-center bg-blue-600 m-4"
+            : "w-[5em] bg-red-500 flex justify-center items-center m-4"
+        }
+      >
         {tag}
       </Badge>
       <CardHeader>
