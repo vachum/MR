@@ -122,10 +122,10 @@ const Service = ({ serviceId, title, text, price, tag }: serviceProps) => {
                 onClick={async (e) => {
                   await updateService({
                     id: serviceId,
-                    price: priceState,
-                    service: serviceState,
-                    text: textState,
-                    tag: tagState,
+                    price: priceState === 0 ? price : priceState,
+                    service: serviceState === "" ? title : serviceState,
+                    text: textState === "" ? text : textState,
+                    tag: tagState === "" ? tag : tagState,
                   });
                 }}
               >

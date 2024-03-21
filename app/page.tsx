@@ -1,17 +1,24 @@
 "use client";
 
+import GetData from "@/components/getData";
+import Hero from "@/components/hero";
+import NavBar from "@/components/navBar";
 import { Button } from "@/components/ui/button";
-import { useClerk } from "@clerk/clerk-react";
 
 import { useRouter } from "next/navigation";
 export default function Home() {
-  const router = useRouter();
-  const { openSignIn, signOut } = useClerk();
   return (
-    <main>
-      <nav className="bg-neutral-200 p-4"></nav>
-
-      <h1>Home</h1>
-    </main>
+    <>
+      <main className="h-screen">
+        <NavBar />
+        <Hero />
+      </main>
+      <section className="w-full flex justify-center ">
+        <div>
+          <h3 className="px-8 font-bold text-3xl">Služby</h3>
+          <GetData user={true} />
+        </div>
+      </section>
+    </>
   );
 }

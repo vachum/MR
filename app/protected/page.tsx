@@ -17,10 +17,9 @@ import { IoMdAdd, IoMdExit } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import DashDropDown from "@/components/dashboardDropDown";
 
 const Dashboard = () => {
-  const { signOut } = useClerk();
-  const router = useRouter();
   const [IsOpen, setIsOpen] = useState("false");
 
   return (
@@ -49,13 +48,7 @@ const Dashboard = () => {
               </Tooltip>
             </TooltipProvider>
 
-            <Button
-              className="bg-red-800 flex justify-center items-center gap-2"
-              onClick={() => signOut(() => router.push("/"))}
-            >
-              Odhlášení
-              <IoMdExit size={21} />
-            </Button>
+            <DashDropDown />
           </nav>
           <div className="flex gap-8 row-start-2 row-end-13 ">
             {IsOpen && (
@@ -64,7 +57,7 @@ const Dashboard = () => {
               </div>
             )}
             <div className="w-full ">
-              <GetData />
+              <GetData user={false} />
             </div>
           </div>
         </div>

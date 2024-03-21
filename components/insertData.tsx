@@ -12,7 +12,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export const CreateTask = () => {
   const [serviceState, setServiceState] = useState("");
@@ -39,6 +39,7 @@ export const CreateTask = () => {
         <h1 className="text-2xl font-bold pb-4">Přidat službu</h1>
         <Label>Název</Label>
         <Input
+          required
           type="text"
           placeholder="Název"
           onChange={(e: any) => {
@@ -47,6 +48,7 @@ export const CreateTask = () => {
         />
         <Label>Popis</Label>
         <Textarea
+          required
           placeholder="Popis"
           onChange={(e: any) => {
             setTextState(e.target.value);
@@ -54,6 +56,7 @@ export const CreateTask = () => {
         />
         <Label>Cena</Label>
         <Input
+          required
           type="text"
           placeholder="Cena"
           onChange={(e: any) => {
@@ -62,6 +65,7 @@ export const CreateTask = () => {
         />
         <Label>Tag</Label>
         <Select
+          required
           onValueChange={(e: any) => {
             setTagState(e);
           }}

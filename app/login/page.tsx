@@ -1,23 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { SignedOut, useClerk, SignIn } from "@clerk/clerk-react";
+import { SignedOut, SignedIn, useClerk, SignIn } from "@clerk/clerk-react";
 
 const Login = () => {
-  const { openSignIn, signOut } = useClerk();
   return (
     <div>
-      <p>Jste přihlášen</p>
       <SignedOut>
-        <Button
-          onClick={() => {
-            () => {
-              openSignIn();
-            };
-          }}
-        >
-          Přihlášení
-        </Button>
+        <div className="w-full h-screen flex justify-center items-center">
+          <SignIn />
+        </div>
       </SignedOut>
+      <SignedIn>
+        <p>Jste přihlášen</p>
+      </SignedIn>
     </div>
   );
 };

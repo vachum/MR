@@ -26,7 +26,7 @@ export const replaceData = mutation({
     // { text: "foo", tag: "bar", status: { archived: true }, _id: ... }
 
     // Unset `tag` by setting it to `undefined`
-    await ctx.db.patch(id, { price: 100 });
+    await ctx.db.patch(id, {});
     console.log(await ctx.db.get(id));
     // { text: "foo", status: { archived: true }, _id: ... }
   },
