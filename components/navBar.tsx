@@ -7,9 +7,9 @@ const NavBar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="px-8 lg:px-16 py-8  flex flex-col lg:flex-row lg:items-center lg:justify-between">
+    <nav className="px-8 lg:px-16 py-8  flex flex-col lg:flex-row lg:items-center lg:justify-between ">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-black">MB</h2>
+        <h2 className="text-2xl font-black">MS</h2>
 
         {isOpen ? (
           <CgClose
@@ -36,7 +36,7 @@ const NavBar = () => {
         <li>
           <a
             href=""
-            className="text-neutral-400 hover:text-neutral-950 transition ease-in-out"
+            className="text-neutral-800 hover:text-neutral-950 transition ease-in-out"
           >
             Služby
           </a>
@@ -44,7 +44,7 @@ const NavBar = () => {
         <li>
           <a
             href=""
-            className="text-neutral-400 hover:text-neutral-950 transition ease-in-out "
+            className="text-neutral-800 hover:text-neutral-950 transition ease-in-out "
           >
             O nás
           </a>
@@ -52,7 +52,7 @@ const NavBar = () => {
         <li>
           <a
             href=""
-            className="text-neutral-400 hover:text-neutral-950 transition ease-in-out "
+            className="text-neutral-800 hover:text-neutral-950 transition ease-in-out "
           >
             Kontakt
           </a>
